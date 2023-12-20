@@ -24,14 +24,13 @@ const MoviesList = ({
       >
         <div
           css={css`
-            width: 400px;
+            width: 500px;
             height: 250px;
             border-radius: 10px;
             background: #fff;
             box-shadow: 0px 0px 40px 0px rgba(145, 124, 124, 0.25);
             color: black;
             display: flex;
-            justify-content: space-evenly;
             align-items: center;
           `}
         >
@@ -42,6 +41,7 @@ const MoviesList = ({
               css={css`
                 width: 102px;
                 height: 100px;
+                margin-left: 30px;
                 border-radius: 10px;
               `}
             ></img>
@@ -52,15 +52,36 @@ const MoviesList = ({
               flex-direction: column;
               font-style: normal;
               font-weight: 400;
-              width: 231px;
-              height: 211px;
               justify-content: center;
+              margin-left: 50px;
+              gap: 5px;
             `}
           >
             <div>Title: {title}</div>
             <div>Year: {year}</div>
             <div>Runtime:{runtime}</div>
-            <div>Genres: {genres}</div>
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+              `}
+            >
+              Genres:{" "}
+              {genres.map((item) => {
+                return (
+                  <p
+                    css={css`
+                      margin-left: 8px;
+                      background-color: #eaac99;
+                      border-radius: 10px;
+                      padding: 3px;
+                    `}
+                  >
+                    {item}
+                  </p>
+                );
+              })}
+            </div>
             <div>IMDB Rating: {imdbRating}</div>
             <div>IMDB Votes: {imdbVotes}</div>
           </div>
